@@ -15,7 +15,6 @@ framework.
 """
 import os
 import sys
-from settings import base
 
 # We defer to a DJANGO_SETTINGS_MODULE already in the environment. This breaks
 # if running multiple sites in the same mod_wsgi process. To fix this, use
@@ -23,8 +22,9 @@ from settings import base
 # os.environ["DJANGO_SETTINGS_MODULE"] = "portfolio.settings"
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "portfolio.settings.test")
 
-sys.path.append(base.SITE_ROOT)
-sys.path.append(os.path.join(base.SITE_ROOT, 'portfolio'))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+sys.path.append(BASE_DIR)
+sys.path.append(os.path.join(BASE_DIR, 'portfolio'))
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
