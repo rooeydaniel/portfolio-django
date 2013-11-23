@@ -8,12 +8,12 @@ from sys import path
 ########## PATH CONFIGURATION
 # here() gives us file paths from the root of the system to the directory
 # holding the current file.
-here = lambda * x: os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
+here = lambda * x: join(abspath(dirname(__file__)), *x)
 
 PROJECT_ROOT = here("..")
 # root() gives us file paths from the root of the system to whatever
 # folder(s) we pass it starting at the parent directory of the current file.
-root = lambda * x: os.path.join(os.path.abspath(PROJECT_ROOT), *x)
+root = lambda * x: join(abspath(PROJECT_ROOT), *x)
 
 # Absolute filesystem path to the Django project directory:
 DJANGO_ROOT = dirname(dirname(abspath(__file__)))
@@ -24,6 +24,8 @@ SITE_ROOT = dirname(DJANGO_ROOT)
 # Site name:
 SITE_NAME = basename(DJANGO_ROOT)
 
+print "PROJECT_ROOT: %s" % PROJECT_ROOT
+print "Templates: %s" % root('templates')
 print "DJANGO_ROOT: %s" % DJANGO_ROOT
 print "SITE_ROOT: %s" % SITE_ROOT
 print "SITE_NAME: %s" % SITE_NAME
