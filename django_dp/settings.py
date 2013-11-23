@@ -24,7 +24,7 @@ print "SITE_NAME: %s" % SITE_NAME
 path.append(DJANGO_ROOT)
 ########## END PATH CONFIGURATION
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
