@@ -8,13 +8,16 @@ from sys import path
 ########## PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:
 DJANGO_ROOT = dirname(dirname(abspath(__file__)))
-print "DJANGO_ROOT: %s" % DJANGO_ROOT
 
 # Absolute filesystem path to the top-level project folder:
 SITE_ROOT = dirname(DJANGO_ROOT)
 
 # Site name:
 SITE_NAME = basename(DJANGO_ROOT)
+
+print "DJANGO_ROOT: %s" % DJANGO_ROOT
+print "SITE_ROOT: %s" % SITE_ROOT
+print "SITE_NAME: %s" % SITE_NAME
 
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:
@@ -131,11 +134,13 @@ ROOT_URLCONF = 'django_dp.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'django_dp.wsgi.application'
 
+print SITE_ROOT
+
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    normpath(join(SITE_ROOT, 'templates')),
+    normpath(join(SITE_ROOT, SITE_NAME, 'templates')),
 )
 
 INSTALLED_APPS = (
