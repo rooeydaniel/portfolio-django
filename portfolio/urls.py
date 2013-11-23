@@ -21,7 +21,7 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 
     # Static files, served from server
-    url(r'^static/(\?P.*)$', 'django.views.static.serve', {'document_root': base.STATIC_ROOT}),
+    #url(r'^static/(\?P.*)$', 'django.views.static.serve', {'document_root': base.STATIC_ROOT}),
 
     # These apply to the public app
     url(r'^portfolio-blog[/]$', TemplateView.as_view(template_name='portfolio-blog.html')),
