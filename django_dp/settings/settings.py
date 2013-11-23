@@ -18,7 +18,6 @@ SITE_NAME = basename(DJANGO_ROOT)
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:
 path.append(DJANGO_ROOT)
-path.append(join(DJANGO_ROOT, SITE_NAME))
 ########## END PATH CONFIGURATION
 
 DEBUG = False
@@ -130,8 +129,6 @@ ROOT_URLCONF = 'django_dp.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'django_dp.wsgi.application'
-
-print SITE_ROOT
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
