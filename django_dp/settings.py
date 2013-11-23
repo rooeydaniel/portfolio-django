@@ -18,11 +18,12 @@ SITE_NAME = basename(DJANGO_ROOT)
 print "DJANGO_ROOT: %s" % DJANGO_ROOT
 print "SITE_ROOT: %s" % SITE_ROOT
 print "SITE_NAME: %s" % SITE_NAME
+print "PATH: %s" % join(DJANGO_ROOT, SITE_NAME)
 
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:
 path.append(DJANGO_ROOT)
-path.append(join(DJANGO_ROOT, SITE_ROOT))
+path.append(join(DJANGO_ROOT, SITE_NAME))
 ########## END PATH CONFIGURATION
 
 DEBUG = True
