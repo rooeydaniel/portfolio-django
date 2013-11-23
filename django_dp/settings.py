@@ -21,7 +21,7 @@ path.append(DJANGO_ROOT)
 path.append(join(DJANGO_ROOT, SITE_NAME))
 ########## END PATH CONFIGURATION
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
