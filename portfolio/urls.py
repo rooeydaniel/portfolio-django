@@ -10,8 +10,8 @@ from django.views.generic import TemplateView
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'django_dp.views.home', name='home'),
-    # url(r'^django_dps/', include('django_dp.foo.urls')),
+    # url(r'^$', 'portfolio.views.home', name='home'),
+    # url(r'^portfolio/', include('portfolio.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
