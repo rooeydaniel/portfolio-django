@@ -19,5 +19,11 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^$', TemplateView.as_view(template_name='base.html'))
+    # These apply to the public app
+    url(r'^portfolio-blog[/]$', TemplateView.as_view(template_name='portfolio-blog.html')),
+    url(r'^portfolio-about[/]$', TemplateView.as_view(template_name='portfolio-about.html')),
+    url(r'^portfolio-contact[/]$', TemplateView.as_view(template_name='portfolio-contact.html')),
+    url(r'^portfolio-project-one[/]$', TemplateView.as_view(template_name='portfolio-project-one.html')),
+    url(r'^portfolio-home[/]$', TemplateView.as_view(template_name='portfolio-home.html')),
+    url(r'^$', TemplateView.as_view(template_name='portfolio-home.html')),
 )

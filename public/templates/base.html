@@ -1,12 +1,62 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="robots" content="NONE,NOARCHIVE">
-    <title>Public Home Page</title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-<body>
-    This is the home page for the public-facing portfolio app
-</body>
+        <title>{% block title %}Base Title - should never see{% endblock title %}</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- Custom CSS for the 'Thumbnail Gallery' Template -->
+        <link href="{% static 'css/portfolio.css' %}" rel="stylesheet">
+
+        {% block extra_css %}{% endblock extra_css %}
+    </head>
+
+    <body>
+        <div class="container">
+            {% block header %}
+                <div class="header">
+                    <ul class="nav nav-pills pull-right">
+                        {% block home_link %}<li><a href="/portfolio-home">Home</a></li>{% endblock home_link %}
+                        {% block blog_link %}<li><a href="/portfolio-blog">Blog</a></li>{% endblock blog_link %}
+                        {% block about_link %}<li><a href="/portfolio-about">About</a></li>{% endblock about_link %}
+                        {% block contact_link %}<li><a href="/portfolio-contact">Contact</a></li>{% endblock contact_link %}
+                    </ul>
+                    <h3 class="text-muted">Daniel's Portfolio</h3>
+                </div>
+            {% endblock header %}
+
+            {% block content %}Base Content - should never see{% endblock content %}
+
+            {% block footer %}
+                <footer>
+                    <div class="container">
+                        <p class="text-muted credit">
+                            Copyright &copy; Dojo Dev Camp 2013 &middot;
+                            <a href="https://www.facebook.com/daniel.stephenson.566">
+                                <img class="img-thumbnail" src="{% static 'images/facebook.png' %}"/>
+                            </a>
+                            <a href="https://twitter.com/rooeydaniel">
+                                <img class="img-thumbnail" src="{% static 'images/twitter.png' %}"/>
+                            </a>
+                            <a href="https://google.com/+DanielStephenson5">
+                                <img class="img-thumbnail" src="{% static 'images/google_plus.png' %}"/>
+                            </a>
+                        </p>
+                    </div>
+                </footer>
+            {% endblock footer %}
+        </div><!-- /.container -->
+
+        <!-- javascript -->
+        <script src="{% static 'js/jquery-2.0.3-min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        {% block extra_js %}{% endblock extra_js %}
+    </body>
 </html>
